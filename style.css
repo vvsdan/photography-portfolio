@@ -1,0 +1,366 @@
+/* ********************************** */
+/* COLOUR PALETTE */
+/* ********************************** */
+
+:root {
+  --columbia-blue: #cae5ffff;
+  --non-photo-blue: #acedffff;
+  --jordy-blue: #89bbfeff;
+  --glaucous: #6f8ab7ff;
+  --davys-gray: #615d6c;
+  --davys-gray-1: #1a191e;
+}
+/* ********************************** */
+/* GLOBAL */
+/* ********************************** */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  background-color: var(--davys-gray-1);
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 2;
+  background-color: var(--davys-gray-1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ********************************** */
+/* NAVIGATION */
+/* ********************************** */
+header {
+  background-color: white;
+}
+
+.navbar {
+  height: 4rem;
+  /* margin: 0rem 1.8rem; */
+  z-index: 100;
+  width: 100%;
+  top: -10rem;
+  opacity: 90%;
+  /* background-color: var(--davys-gray-1); */
+}
+
+.nav_container {
+  align-items: center;
+  width: 100%;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav_links {
+  padding: 1.5rem 0 1rem 1rem;
+  display: flex;
+  justify-content: end;
+  list-style: none;
+  margin-right: 4rem;
+}
+
+.nav_link {
+  margin-left: 4rem;
+  font-size: 2.3rem;
+  color: white;
+  text-decoration: none;
+}
+
+.nav_link:hover {
+  color: var(--jordy-blue);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right: 3.5rem;
+  top: 2.5rem;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-color: white;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navbar {
+    padding: 4.8rem;
+    opacity: 90%;
+  }
+
+  .nav_links {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transition: 0.4s;
+    margin: 2.6rem 0;
+    padding-bottom: 5rem;
+  }
+
+  .nav_link {
+    margin: 1.6rem;
+  }
+
+  .nav_links.active {
+    left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .hamburger {
+    display: block;
+    top: 1.05rem;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .navbar {
+    padding: 2.8rem;
+    opacity: 97%;
+  }
+
+  .nav_links {
+    position: fixed;
+    left: -100%;
+    gap: 2.5rem;
+    /* font-size: 30px; */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transition: 0.4s;
+    padding-bottom: 100%;
+  }
+
+  .nav_link {
+    top: -17rem;
+    margin: 1.6rem;
+    margin-top: -10rem;
+  }
+
+  .nav_links.active {
+    left: 0;
+  }
+}
+
+.active[aria-current="page"] {
+  color: var(--jordy-blue);
+}
+/* ********************************** */
+/* IMAGES */
+/* ********************************** */
+
+.image_container {
+  margin-top: 10rem;
+  text-align: center;
+}
+
+.portrait {
+  height: 60rem;
+  margin: 2rem;
+  border: 2px solid white;
+  align-items: center;
+  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.05);
+}
+
+.landscape {
+  height: 80rem;
+  margin: 1.5rem;
+  border: 2px solid white;
+  align-items: center;
+}
+
+/* ********************************** */
+/* PROJECTS */
+/* ********************************** */
+
+.project_container {
+  margin-top: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project_cover {
+  position: relative;
+  text-align: center;
+}
+
+.project_title {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 4rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.171);
+}
+
+.project_link {
+  opacity: 30%;
+}
+
+.project_link:hover {
+  cursor: pointer;
+  opacity: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+/* ********************************** */
+/* CONTACT FORM */
+/* ********************************** */
+
+.contact_container {
+  margin-top: 10rem;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.btn_container {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.btn_fetch {
+  position: relative;
+  width: 200px;
+  padding: 15px 0;
+  margin: 10px 5px;
+  border: 3px solid var(--glaucous);
+  background: transparent;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn_fetch:hover {
+  background: var(--non-photo-blue);
+  color: black;
+}
+
+#spaceImage {
+  margin: 5rem auto;
+  text-align: center;
+  width: 100rem;
+}
+
+/* ********************************** */
+/* ABOUT ME */
+/* ********************************** */
+.about_container {
+  margin-top: 10rem;
+  margin-right: 10rem;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.about_portrait {
+  height: 70rem;
+  margin: 2rem 5rem 0rem 10rem;
+  border: 2px solid white;
+  align-items: center;
+}
+
+.about_title {
+  color: var(--columbia-blue);
+  font-size: 3rem;
+}
+
+.about_bio {
+  color: white;
+  font-size: 1.5rem;
+  text-align: left;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.about_btn {
+  position: relative;
+  width: 200px;
+  padding: 15px 0;
+  margin: 10px 5px;
+  border: 3px solid var(--glaucous);
+  background: transparent;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+
+.about_btn:hover {
+  background: var(--non-photo-blue);
+  color: black;
+}
+
+.about_credit {
+  margin: 1rem 0rem 0rem 10rem;
+  font-size: 1.2rem;
+  color: var(--columbia-blue);
+}
+
+/* ********************************** */
+/* FOOTER*/
+/* ********************************** */
+
+.footer {
+  background-color: var(--glaucous);
+  height: 2.5rem;
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
+}
+
+.footer_text {
+  font-size: 1.2rem;
+  background-color: var(--glaucous);
+}
